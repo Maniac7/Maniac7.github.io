@@ -1,0 +1,90 @@
+{
+  "mapArr": [
+    "beatles","ledzeppelin","pinkfloyd","queen","blindguardian","uppsalabtl"    
+  ],
+  "treeMaster": {
+    "depth": "notSub"
+  },
+  "beatles": {
+    "name": "The Beatles",
+    "srcb": "beatlesb.jpg",
+    "slevel": "1",
+    "depth": "top",
+    "parent": "treeMaster",
+    "hasChild": "true"
+  },
+  "ledzeppelin": {
+    "name": "Led Zeppelin",
+    "srcb": "ledzeppelinb.jpg",
+    "slevel": "2",
+    "depth": "top",
+    "parent": "treeMaster",
+    "hasChild": "true"
+  },
+  "pinkfloyd": {
+    "name": "Pink Floyd",
+    "srcb": "pinkfloydb.jpg",
+    "slevel": "3",
+    "depth": "top",
+    "parent": "treeMaster",
+    "hasChild": "false"
+  },
+  "queen": {
+    "name": "Queen",
+    "srcb": "queenb.jpg",
+    "slevel": "4",
+    "depth": "top",
+    "parent": "treeMaster",
+    "hasChild": "false"
+  },
+   "blindguardian": {
+    "name": "Blind Guardian",
+    "srcb": "blindguardianb.jpg",
+    "slevel": "5",
+    "depth": "top",
+    "parent": "treeMaster",
+    "hasChild": "false"
+  },
+  "uppsalabtl": {
+    "name": "Uppsala, Sweden",
+    "slevel": "20190406",
+    "depth": "sub",
+    "parent": "beatles",
+    "hasChild": "false"
+  },
+  "breeland": {
+    "name": "Bree-land",
+    "slevel": "1",
+    "depth": "sub",
+    "parent": "eriador",
+    "hasChild": "false"
+  },
+  "lonelands": {
+    "name": "The Lone-Lands",
+    "slevel": "20",
+    "depth": "sub",
+    "parent": "eriador",
+    "hasChild": "false"
+  },
+  "moria": {
+    "name": "The Mines of Moria",
+    "slevel": "50",
+    "depth": "sub",
+    "parent": "rhovanion",
+    "hasChild": "false"
+  },
+  "thorinsgate": {
+    "name": "Thorin's Gate",
+    "slevel": "1",
+    "depth": "sub",
+    "parent": "eredluin",
+    "hasChild": "true"
+  },
+  "silverdeepmine": {
+    "name": "Silver Deep Mine",
+    "slevel": "1",
+    "depth": "sub",
+    "parent": "thorinsgate",
+    "hasChild": "false"
+  }
+}

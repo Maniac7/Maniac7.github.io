@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Concert</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<div class="full-window">
+    <header class="titlebar">
+        <div class="drag-region">
+            <div id="window-title">
+                <span>Sick Concert Bro</span>
+            </div> 
+        </div>
+    </header>
+    <div class="nav-col column-view darker" id="treeMaster">
+        <div style="display: none" id="masterNavButton">
+            <button class="navArrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12.5px" height="17px" viewBox="0 0 60 80" xml:space="preserve">
+                      <polyline fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/>
+                    </svg>  
+            </button>
+        </div>
+        <div class="nav-title">Maps</div>
+    </div>
+    <div class="map-col column-view dark">
+        <div class="map-viewport" style="background-color: antiquewhite"></div>
+        <div class="map-info darkest"></div>
+    </div>
+</div>
+<script src="map_index.js"></script>
+</body>
+</html>

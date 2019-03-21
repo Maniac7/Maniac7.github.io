@@ -1,0 +1,253 @@
+/* Fill out the screen properly*/
+
+body {
+  margin: 0;
+}
+
+.full-window {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 30px);
+  width: 100vw;
+}
+
+/* Golden Ratio widths */
+.small-goldw {
+  width: 38.2%;
+}
+
+.large-goldw {
+  width: 61.8%;
+}
+
+/* Custom Titlebar */
+.titlebar {
+  display: block;
+  position: fixed;
+  height: 16px;
+  width: 100vw;
+  background: #101010;
+  padding: 2px;
+  color: #FFF;
+}
+
+.drag-region {
+  width: 100%;
+  height: 100%;
+  -webkit-app-region: drag;
+}
+
+#window-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 30px);
+  position: absolute;
+  top: 0;
+  left: calc(100vw - 91px);
+  height: 100%;
+  -webkit-app-region: no-drag;
+}
+
+#window-controls .titlebar-buttons {
+  grid-row: 1 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  cursor: default;
+  opacity: 0.6;
+}
+
+#window-controls .titlebar-buttons:hover {
+  cursor: pointer;
+  background: #202020;
+  opacity: 1;
+}
+
+#window-controls #min-button {
+  grid-column: 1;
+}
+
+#window-controls #max-button, #window-controls #restore-button {
+  grid-column: 2;
+}
+
+#window-controls #close-button {
+  grid-column: 3;
+}
+
+#window-controls .titlebar-button:hover {
+  background: rgba(255,255,255,0.2);
+  opacity: 1;
+}
+
+#window-controls #close-button:hover {
+  background: #E81123;
+}
+
+#window-controls #restore-button {
+  display: none;
+}
+
+.titlebar #drag-region {
+  display: grid;
+  grid-template-columns: auto 90px;
+}
+
+#window-title {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12px;
+  margin-left: 8px;
+  overflow-x: hidden;
+}
+
+#window-title span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+/* Bottom menu bar */
+.menu-bar {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 16px;
+  padding: 2px;
+  background: #008000;
+}
+
+/* Main Display Sections */
+.column-view {
+  padding: 5px;
+  height: 100%;
+  color: #fff;
+}
+
+.nav-col {
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-col {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.map-viewport {
+  margin-bottom: 5px;
+  flex-grow: 0.72;
+}
+
+.map-info {
+  flex-grow: 0.28;
+}
+
+/* Nav Tree Styling */
+.nav-title {
+  font-size: 22px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.topTreeItem {
+  margin-top: 5px;
+  padding: 30px 7px;
+  background: steelblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 0.1s ease-in-out, padding 0.5s ease-in-out;
+  cursor: pointer;
+  border-radius: 5px;
+  opacity: 0.9;
+  min-height: 19px;
+}
+
+.topTreeItemE {
+  padding: 5px;
+}
+
+.subTreeItem {
+  margin-top: 5px;
+  height: 17px;
+  font-size: 14px;
+  background: royalblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  opacity: 0.9;
+  transition: all 0.1s ease-in-out
+}
+
+.subParent {
+  margin-left: 10%;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+  max-height: 0px;
+  min-height: 0px;
+  transition: max-height 0.5s ease-in-out, min-height 0.5s ease-in-out;
+}
+
+.navTreeItem:hover {
+  opacity: 1;
+}
+
+/* Arrows for nav tree (http://cssdeck.com/labs/arrow-svg) */
+
+button {
+  background: transparent;
+  border: 0;
+  outline:0;
+  padding: 0px;
+  display: block;
+  margin-left: 5px;
+  transition: all 0.5s ease-in-out
+}
+
+.navArrow {
+  cursor: pointer;
+  top: 50%;
+  height: 17px;
+}
+
+.navTreeItem:hover polyline {
+  stroke-width: 8;
+  transition: all 100ms ease-in-out;
+}
+
+.rBackQuarter {
+  transform: rotate(-90deg);
+}
+
+/* Dark Colour Scheme */
+.dark {
+  background-color: #303030;
+}
+
+.darker {
+  background-color: #202020;
+}
+
+.darkest {
+  background-color: #101010;
+}
