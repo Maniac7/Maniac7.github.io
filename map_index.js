@@ -2,23 +2,37 @@
 
 let mapIndex;
 
- function loadJSON(callback) {   
+ function loadIndexJSON(callback) {   
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'https://api.myjson.com/bins/13lgy2', false); // Replace 'my_data' with the path to your file
+    xobj.open('GET', 'https://raw.githubusercontent.com/Maniac7/Maniac7.github.io/master/concertlist.json', false); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
           if (xobj.readyState == 4 && xobj.status == "200") {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-			console.log(xobj.responseText)
             callback(xobj.responseText);
           }
     };
     xobj.send(null);  
  }
  
- loadJSON(function(response) {
-  // Parse JSON string into object
+ loadIndexJSON(function(response) {
     mapIndex = JSON.parse(response);
+ });
+
+ function loadMetaJSON(callback) {   
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'https://raw.githubusercontent.com/Maniac7/Maniac7.github.io/master/concertmeta.json', false); 
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+ }
+ 
+ loadMetaJSON(function(response) {
+    mapMeta = JSON.parse(response);
  });
 
 console.log(mapIndex);
@@ -58,6 +72,10 @@ mapIndex.newTreeItem = (depth,iname,name,parent,slevel,hasChild,srcb) => {
         treeItem.appendChild(navButtonClone);
         treeItem.addEventListener("click", function(){mapIndex.toggleShowChildren(this);});
     }
+
+    treeItem.addEventListener('click', function() {
+        mapLoader.loadCurMap(this);
+      });
 
     console.log(srcb);
 };
