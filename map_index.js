@@ -1,8 +1,10 @@
-//loads latest map index and metadata from mapindex.json
+//loads latest concer index and metadata from github repo
 
 let mapIndex;
+let cnrtMeta;
 
- function loadIndexJSON(callback) {   
+// taking care of retrieving 
+const loadIndexJSON = (callback) => {   
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
     xobj.open('GET', 'https://raw.githubusercontent.com/Maniac7/Maniac7.github.io/master/concertlist.json', false); // Replace 'my_data' with the path to your file
@@ -32,7 +34,7 @@ let mapIndex;
  }
  
  loadMetaJSON(function(response) {
-    mapMeta = JSON.parse(response);
+    cnrtMeta = JSON.parse(response);
  });
 
 console.log(mapIndex);
@@ -166,14 +168,8 @@ mapIndex.toggleTopStyle = (el) => {
     }
 }
 
-//Gets total height of an element (inc padding, margin, etc.)
-// mapIndex.outerHeight = (el) => {
-
-//     // var styles = window.getComputedStyle(el);
-//     // var margin = parseFloat(styles['marginTop']) +
-//     //              parseFloat(styles['marginBottom']);
-  
-//     return Math.ceil(el.offsetHeight);
-// }
+cnrtMeta.loadEvent = (event) => {
+    const placeId = "test";
+}
 
 mapIndex.genNavTree();

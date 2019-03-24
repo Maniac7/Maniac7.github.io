@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Concert</title>
+    <title>ConcertList.com</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -12,7 +12,7 @@
     <header class="titlebar">
         <div class="drag-region">
             <div id="window-title">
-                <span>Sick Concert Bro</span>
+                <span>I'm a placeholder do you like me?</span>
             </div> 
         </div>
     </header>
@@ -24,11 +24,26 @@
                     </svg>  
             </button>
         </div>
-        <div class="nav-title">Maps</div>
+        <div class="nav-title">Concert List</div>
     </div>
     <div class="map-col column-view dark">
-        <div class="map-viewport" style="background-color: antiquewhite"></div>
-        <div class="map-info darkest"></div>
+        <div id="detailsCol">
+            <div id="details"></div>
+            <div id="tickets"></div>
+        </div>
+        <div id="venueCol">
+            <div id="venueInfo">
+                <div id="venueName">
+                    <p id="venueTitle">Venue: Katalin and all that Jazz</p>
+                </div>
+            </div>
+            <div id="mapDiv">
+                <div id="mapFrame">
+                    <iframe id="googleFrame" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBOsKOMh0XAGJM30acs6Uod1TrvLlYsTAg&q=place_id:ChIJX0hHTfjLX0YRpOlSJXzEPP4&zoom=17"">
+                    </iframe>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script src="map_index.js"></script>
