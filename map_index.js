@@ -136,14 +136,14 @@ mapIndex.toggleShowChildren = (el) => {
 
     // for case where a top item is clicked
     // this will toggle the style changes for all of them (size, etc)
-    if (el.parentElement.id === "treeMaster") {
-        if (mapIndex.checkTopOpen(el)) {
-            console.log("another element is expanded");
-        }
-        else {
-            mapIndex.toggleTopStyle(el);
-        }
-    }
+//    if (el.parentelement.id === "treemaster") {
+//        if (mapindex.checktopopen(el)) {
+//            console.log("another element is expanded");
+//        }
+//        else {
+//            mapindex.toggletopstyle(el);
+//        }
+//    }
 }
 
 //Checks if the top tree items are all closed except current element
