@@ -83,22 +83,72 @@ body {
   flex: 60 1 0;
   display: flex;
   flex-direction: column;
-  background-color: white;
   color: black;
 }
 
     /* Details styling */
 
 #details {
-   flex: 55 1 0;
-   padding: 5px 5px 5px 5px; 
-   border-bottom: 3px dashed black;
+  overflow-y: auto;
+  flex: 60 1 0;
+  padding: 5px 5px 5px 5px; 
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: lightblue;
+  border-radius: 5px
 }
 
 #tickets {
-    flex: 45 1 0;
-    padding: 5px;
+  /* Consider changing to constant height ~230px */
+  flex: 40 1 0;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: papayawhip;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+#tickets:hover {
+  transform: rotate(0.5deg) scale(0.97,0.97);
+}
+
+.dtortm {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.aton {
+  font-size: 18px;
+}
+
+#ticketTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#ticketPrice {
+  width: 120px;
+  padding: 20px 5px;
+  margin-top: 30px;
+  background: lightskyblue;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  font-size: 28px;
+}
+
+#ticketPrice:hover {
+  box-shadow: 2px 2px 15px rgba(0,0,0,.4);
+}
+
+   /* Styling for venue info */
 
 #venueCol {
   margin: 0px 5px;
@@ -116,7 +166,7 @@ body {
 
 #venueName {
   height: 45px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgb(255, 255, 255, 0.4);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -126,11 +176,12 @@ body {
 #venueTitle {
   margin-left: 10px;
   font-weight: bold;
+  font-size: 20px
 }
 
 #detailsTitle {
-    font-size: 26px;
-    font-weight: bold;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 #mapDiv {
@@ -247,4 +298,8 @@ button {
 
 .darkest {
   background-color: #101010;
+}
+
+.centered {
+  text-align: center;
 }
