@@ -106,7 +106,7 @@ body {
   padding: 5px;
   border-radius: 10px;
   background-color: papayawhip;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.1s ease-in-out;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -115,7 +115,7 @@ body {
 }
 
 #tickets:hover {
-  transform: rotate(0.5deg) scale(0.97,0.97);
+  transform: scale(0.98,0.98);
 }
 
 .dtortm {
@@ -140,12 +140,14 @@ body {
   background: lightskyblue;
   border-radius: 10px;
   font-weight: bold;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
   font-size: 28px;
 }
 
 #ticketPrice:hover {
   box-shadow: 2px 2px 15px rgba(0,0,0,.4);
+  transform: scale(1.05,1.05);
+  cursor: pointer;
 }
 
    /* Styling for venue info */
@@ -162,10 +164,13 @@ body {
   background: url(https://upload.wikimedia.org/wikipedia/commons/a/a3/Katalin_Uppsala.jpg) no-repeat;
   background-size: cover;
   margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 #venueName {
-  height: 45px;
+  height: 55px;
   background-color: rgb(255, 255, 255, 0.4);
   display: flex;
   justify-content: flex-start;
