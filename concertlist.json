@@ -1,6 +1,6 @@
 {
   "mapArr": [
-    "beatles","ledzeppelin","pinkfloyd","queen","blindguardian","uppsalabtl"    
+    "beatles","ledzeppelin","pinkfloyd","queen","blindguardian","uppsalabtl, belfastsseled"    
   ],
   "treeMaster": {
     "depth": "notSub"
@@ -52,11 +52,11 @@
     "parent": "beatles",
     "hasChild": "false"
   },
-  "breeland": {
-    "name": "Bree-land",
-    "slevel": "1",
+  "belfastsseled": {
+    "name": "Belfast, Northern Ireland",
+    "slevel": "20190510",
     "depth": "sub",
-    "parent": "eriador",
+    "parent": "ledzeppelin",
     "hasChild": "false"
   },
   "lonelands": {

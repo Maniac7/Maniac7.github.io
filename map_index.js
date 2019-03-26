@@ -63,6 +63,10 @@ mapIndex.newTreeItem = (depth,iname,name,parent,slevel,hasChild,srcb) => {
         treeItem.classList.add("topTreeItem");
     } else if (depth === "sub") {
         treeItem.classList.add("subTreeItem");
+        // add event loading feature
+        treeItem.addEventListener('click', function() {
+            cnrtMeta.loadEventDetails(this);
+        });
     };
     treeItemDiv.classList.add("subParent")
     treeItem.classList.add("navTreeItem");
@@ -74,10 +78,6 @@ mapIndex.newTreeItem = (depth,iname,name,parent,slevel,hasChild,srcb) => {
         treeItem.appendChild(navButtonClone);
         treeItem.addEventListener("click", function(){mapIndex.toggleShowChildren(this);});
     }
-
-    treeItem.addEventListener('click', function() {
-        mapLoader.loadCurMap(this);
-      });
 
     console.log(srcb);
 };
@@ -168,8 +168,21 @@ mapIndex.toggleTopStyle = (el) => {
     }
 }
 
-cnrtMeta.loadEvent = (event) => {
-    const placeId = "test";
+cnrtMeta.loadEventDetails = (el) => {
+    const eventId = cnrtMeta[el.nextSibling.id];
+    cnrtMeta.loadEvent(eventId);
+}
+
+cnrtMeta.loadEvent = (eventId) => {
+    //update all necessary fields
+    document.getElementById("detailsTitle").innerText = eventId.title;
+    document.getElementById("detailsDesc").innerText = eventId.desc;
+    document.getElementById("detailsTime").innerText = eventId.time;
+    document.getElementById("detailsDate").innerText = eventId.date + " "+ eventId.timeZone;
+    document.getElementById("priceLink").innerText = eventId.price;
+    document.getElementById("venueTitle").innerText = eventId.venue;
+    document.getElementById("venueInfo").style.backgroundImage = "url(" + eventId.venueImg + ")"
+    document.getElementById("mapFrame").src = "https://www.google.com/maps/embed/v1/place?key=" + cnrtMeta.apiKey + "&q=place_id:" + eventId.mapKey + "&zoom=17"
 }
 
 mapIndex.genNavTree();
