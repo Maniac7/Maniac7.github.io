@@ -1,4 +1,4 @@
-//loads latest concer index and metadata from github repo
+//loads latest concert index and metadata from github repo
 
 let mapIndex;
 let cnrtMeta;
@@ -180,9 +180,9 @@ cnrtMeta.loadEvent = (eventId) => {
     document.getElementById("detailsTime").innerText = eventId.time;
     document.getElementById("detailsDate").innerText = eventId.date + " "+ eventId.timeZone;
     document.getElementById("priceLink").innerText = eventId.price;
-    document.getElementById("venueTitle").innerText = eventId.venue;
+    document.getElementById("venueTitle").innerText = "Venue - " + eventId.venue;
     document.getElementById("venueInfo").style.backgroundImage = "url(" + eventId.venueImg + ")"
-    document.getElementById("mapFrame").src = "https://www.google.com/maps/embed/v1/place?key=" + cnrtMeta.apiKey + "&q=place_id:" + eventId.mapKey + "&zoom=17"
+    document.getElementById("googleFrame").src = "https://www.google.com/maps/embed/v1/place?key=" + cnrtMeta.apiKey + "&q=place_id:" + eventId.mapKey + "&zoom=17"
 }
 
 mapIndex.genNavTree();
